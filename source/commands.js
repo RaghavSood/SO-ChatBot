@@ -15,7 +15,7 @@ var commands = {
 			return args + ': ' + desc;
 		}
 
-		return 'https://github.com/Zirak/SO-ChatBot/wiki/' +
+		return 'https://github.com/RaghavSood/SO-ChatBot/wiki/' +
 		       'Interacting-with-the-bot';
 	},
 

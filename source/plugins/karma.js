@@ -13,6 +13,7 @@ IO.register( 'input', function ( msgObj ) {
 });
 
 function vote ( subject, op ) {
+	subject = subject.toLowerCase();
 	var dir = {
 		'++' :  1,
 		'--' : -1
@@ -50,7 +51,7 @@ bot.addCommand({
 	name : 'karma',
 	//basic front-end for now
 	fun : function ( args ) {
-		var subject = args.content,
+		var subject = args.content.toLowerCase(),
 			votes = storage[ subject ];
 
 		return '{0} has {1} karma'.supplant(
