@@ -1500,7 +1500,13 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 var commands = {
 
 	cat : function( args ) {
-		args.send('http://thecatapi.com/api/images/get?format=src&type=gif');
+
+		$.ajax({
+  			url: 'http://thecatapi.com/api/images/get?format=src&type=gif',
+  			success: function( data ) {
+  				  args.send(data.url);
+  			}
+		});
 	},
 
 	//MY COMMANDS END HERE
@@ -2251,7 +2257,7 @@ var privilegedCommands = {
 };
 //voting-based commands for unpriviledged users
 var communal = {
-	die : true, ban : true
+	die : true
 };
 
 Object.iterate( commands, function ( cmdName, fun ) {
