@@ -4,17 +4,16 @@
 var commands = {
 
 	cat : function( args ) {
-		function jsonp(url) {
-    		var s = document.createElement('script');
-   	 		s.src = url;
-    		document.body.appendChild(s);
-		}
+		function httpGet(theUrl) {
+   			var xmlHttp = null;
 
-		function foo(data) {
-	    	console.log(data);
-		}
+    		xmlHttp = new XMLHttpRequest();
+    		xmlHttp.open( "GET", theUrl, false );
+    		xmlHttp.send( null );
+    		return xmlHttp.responseText;
+  		}
 
-		jsonp("http://pages.lemonmeme.com/rav/?callback=foo");
+  		args.send(httpGet("http://raghavsood.com/XMLString.php"));
 
 	},
 
