@@ -1501,12 +1501,13 @@ var commands = {
 
 	cat : function( args ) {
 
-		var img = new Image();
-		img.src = 'http://thecatapi.com/api/images/get?format=src&type=gif';
-		img.onload = function() {
- 			 args.send(this.src);
-		};
 
+		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.async="false";
+		xmlDoc.load('http://thecatapi.com/api/images/get?format=xml&type=gif');
+		xmlObj=xmlDoc.documentElement;
+        var v = xmlObj.childNodes(0).getAttribute("url");
+        args.send(v);
 	},
 
 	//MY COMMANDS END HERE
