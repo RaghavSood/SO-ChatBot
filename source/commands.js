@@ -3,8 +3,24 @@
 
 var commands = {
 
+	catgif : function( args ) {
+		var cats = "http://raghavsood.com/catgif.php";
+
+	IO.jsonp({
+		url : cats,
+		fun : gotURL,
+		jsonpName : 'callback'
+	});
+
+	function gotURL ( resp ) {
+		console.log(resp);
+		var msg = IO.decodehtmlEntities( resp.src );
+		args.send(msg);
+	}
+	},
+
 	cat : function( args ) {
-		var cats = "http://pages.lemonmeme.com/rav/?callback=foo";
+		var cats = "http://raghavsood.com/cat.php";
 
 	IO.jsonp({
 		url : cats,
@@ -757,6 +773,8 @@ var descriptions = {
 	unban : 'Removes a user from my mindjail. `/unban usr_id|usr_name`',
 	urban : 'Fetches UrbanDictionary definition. `/urban something`',
 	user : 'Fetches user-link for specified user. `/user usr_id|usr_name`',
+	cat : 'Returns a static, normal cat picture',
+	catgif : 'Returns an animated cat picture'
 };
 
 //only allow owners to use certain commands
