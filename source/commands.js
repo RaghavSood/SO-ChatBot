@@ -4,16 +4,20 @@
 var commands = {
 
 	cat : function( args ) {
-		function httpGet(theUrl) {
-   			var xmlHttp = null;
+		function jsonp(url) {
+			var s = document.createElement('script');
+			s.src = url;
+			document.body.appendChild(s);
 
-    		xmlHttp = new XMLHttpRequest();
-    		xmlHttp.open( "GET", theUrl, false );
-    		xmlHttp.send( null );
-    		return xmlHttp.responseText;
-  		}
+			function foo(data) {
+				console.log(data);
+			}
 
-  		args.send(httpGet("http://raghavsood.com/XMLString.php"));
+
+		}
+
+
+		jsonp("http://pages.lemonmeme.com/rav/?callback=foo");
 
 	},
 
