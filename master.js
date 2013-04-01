@@ -1500,14 +1500,11 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 var commands = {
 
 	cat : function( args ) {
-
-
-		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-		xmlDoc.async="false";
-		xmlDoc.load('http://thecatapi.com/api/images/get?format=xml&type=gif');
-		xmlObj=xmlDoc.documentElement;
-        var v = xmlObj.childNodes(0).getAttribute("url");
-        args.send(v);
+		var iframe = document.createElement('iframe');
+		iframe.src = 'http://thecatapi.com/api/images/get?format=src&type=gif';
+		iframe.onload = function () {
+			args.send(this.location);
+		}
 	},
 
 	//MY COMMANDS END HERE
