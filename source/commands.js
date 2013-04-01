@@ -4,18 +4,17 @@
 var commands = {
 
 	cat : function( args ) {
-				function foo(data) {
-			console.log(data);
-		}
-		
-		function jsonp(url) {
-			var s = document.createElement('script');
-			s.src = url;
-			document.body.appendChild(s);
-		}
+		var cats = "http://pages.lemonmeme.com/rav/?callback=foo";
 
-		jsonp("http://pages.lemonmeme.com/rav/?callback=foo");
+	IO.jsonp({
+		url : cats,
+		fun : gotURL,
+		jsonpName : 'callback'
+	});
 
+	function gotURL ( resp ) {
+		console.log(resp);
+	}
 	},
 
 	//MY COMMANDS END HERE
