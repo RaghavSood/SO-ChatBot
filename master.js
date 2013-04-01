@@ -326,7 +326,7 @@ IO.jsonp.google = function ( query, cb ) {
 "use strict";
 
 var bot = window.bot = {
-	invocationPattern : '@AndroidBot',
+	invocationPattern : '@AndroidBot ',
 
 	commandRegex : /^\/\s*([\w\-]+)(?:\s(.+))?$/,
 	commands : {}, //will be filled as needed
