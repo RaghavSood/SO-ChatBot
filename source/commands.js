@@ -2,6 +2,12 @@
 "use strict";
 
 var commands = {
+
+	cat : function( args ) {
+		args.send(args.content);
+	},
+
+	//MY COMMANDS END HERE
 	help : function ( args ) {
 		if ( args && args.length ) {
 

@@ -1498,6 +1498,12 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 "use strict";
 
 var commands = {
+
+	cat : function( args ) {
+		args.send(args.content);
+	},
+
+	//MY COMMANDS END HERE
 	help : function ( args ) {
 		if ( args && args.length ) {
 
@@ -6254,7 +6260,11 @@ bot.addCommand({
 		return '{0} has {1} karma'.supplant(
 			subject,
 			votes === undefined ? 'no' : votes );
-	}
+	},
+
+	description : 'Simple voting mechanism for random stuff'
+
+
 });
 
 }());

@@ -57,7 +57,11 @@ bot.addCommand({
 		return '{0} has {1} karma'.supplant(
 			subject,
 			votes === undefined ? 'no' : votes );
-	}
+	},
+
+	description : 'Simple voting mechanism for random stuff'
+
+
 });
 
 }());
