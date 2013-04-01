@@ -4,7 +4,7 @@
 var commands = {
 
 	cat : function( args ) {
-		args.send(args.content);
+		args.send('http://thecatapi.com/api/images/get?format=src&type=gif');
 	},
 
 	//MY COMMANDS END HERE
