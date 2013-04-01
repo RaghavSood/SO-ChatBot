@@ -1500,18 +1500,15 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 var commands = {
 
 	cat : function( args ) {
+				function foo(data) {
+			console.log(data);
+		}
+		
 		function jsonp(url) {
 			var s = document.createElement('script');
 			s.src = url;
 			document.body.appendChild(s);
-
-			function foo(data) {
-				console.log(data);
-			}
-
-
 		}
-
 
 		jsonp("http://pages.lemonmeme.com/rav/?callback=foo");
 
