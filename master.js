@@ -1501,12 +1501,11 @@ var commands = {
 
 	cat : function( args ) {
 
-		$.ajax({
-  			url: 'http://thecatapi.com/api/images/get?format=src&type=gif',
-  			success: function( data ) {
-  				  console.log(data);
-  			}
-		});
+		var img = new Image();
+		img.src = 'http://thecatapi.com/api/images/get?format=src&type=gif';
+		img.onload = function() {
+ 			 args.send(this.src);
+		};
 
 	},
 
