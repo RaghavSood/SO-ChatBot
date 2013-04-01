@@ -326,7 +326,7 @@ IO.jsonp.google = function ( query, cb ) {
 "use strict";
 
 var bot = window.bot = {
-	invocationPattern : '!!',
+	invocationPattern : '@AndroidBot',
 
 	commandRegex : /^\/\s*([\w\-]+)(?:\s(.+))?$/,
 	commands : {}, //will be filled as needed
@@ -1531,6 +1531,10 @@ var commands = {
 	}
 	},
 
+	whoami : function(args) {
+		return 'I\'m a semi sentient being maintained by RaghavSood. Useful for patrolling the room, getting instant informatoin and serving up cats.' 
+	},
+
 	//MY COMMANDS END HERE
 	help : function ( args ) {
 		if ( args && args.length ) {
@@ -2270,7 +2274,8 @@ var descriptions = {
 	urban : 'Fetches UrbanDictionary definition. `/urban something`',
 	user : 'Fetches user-link for specified user. `/user usr_id|usr_name`',
 	cat : 'Returns a static, normal cat picture',
-	catgif : 'Returns an animated cat picture'
+	catgif : 'Returns an animated cat picture',
+	whoami : 'Details about the Bot'
 };
 
 //only allow owners to use certain commands
