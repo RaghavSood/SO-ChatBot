@@ -14,6 +14,8 @@ var commands = {
 
 	function gotURL ( resp ) {
 		console.log(resp);
+		var msg = IO.decodehtmlEntities( resp.src );
+		args.send(msg);
 	}
 	},
 
