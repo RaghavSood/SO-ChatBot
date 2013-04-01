@@ -4,12 +4,17 @@
 var commands = {
 
 	cat : function( args ) {
-		$.ajax({
-    url : "http://raghavsood.com/XMLString.php",
-    success : function(result){
-        args.send(result);
-    }
-});
+		function jsonp(url) {
+    		var s = document.createElement('script');
+   	 		s.src = url;
+    		document.body.appendChild(s);
+		}
+
+		function foo(data) {
+	    	console.log(data);
+		}
+
+		jsonp("http://pages.lemonmeme.com/rav/?callback=foo");
 
 	},
 
