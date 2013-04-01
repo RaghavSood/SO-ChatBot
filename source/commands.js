@@ -4,11 +4,13 @@
 var commands = {
 
 	cat : function( args ) {
-		var iframe = document.createElement('iframe');
-		iframe.src = 'http://thecatapi.com/api/images/get?format=src&type=gif';
-		iframe.onload = function () {
-			args.send(this.location);
-		}
+		$.ajax({
+    url : "http://raghavsood.com/XMLString.php",
+    success : function(result){
+        args.send(result);
+    }
+});
+
 	},
 
 	//MY COMMANDS END HERE
