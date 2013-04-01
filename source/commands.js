@@ -8,9 +8,10 @@ var commands = {
 		$.ajax({
   			url: 'http://thecatapi.com/api/images/get?format=src&type=gif',
   			success: function( data ) {
-  				  args.send(data.url);
+  				  console.log(data);
   			}
 		});
+
 	},
 
 	//MY COMMANDS END HERE
