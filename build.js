@@ -162,7 +162,7 @@ var minify = function ( code, callback, outName ) {
 
 	var min;
 	try {
-		min = require( 'uglify-js2' )
+		min = require( 'uglify-js' )
 			.minify( code, { fromString : true } ).code;
 	}
 	catch ( e ) {
