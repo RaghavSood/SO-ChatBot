@@ -7319,7 +7319,7 @@ var message = "Welcome to the Android chatroom! Please review the " +
 
 IO.register( 'userregister', function ( user, room ) {
 	//return;
-	if ( Number(room) !== 15 || seen[user.id] || bot.isOwner(user.id) ) {
+	if ( Number(room) !== 15) { /* || seen[user.id] || bot.isOwner(user.id) ) {*/
 		return;
 	}
 
