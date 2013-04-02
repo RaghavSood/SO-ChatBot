@@ -1522,13 +1522,13 @@ var commands = {
 		var lastRun;
 		var currentRun = new Date().getTime();
 
-		if(!bot.isOwner(args.get('user_id'))) {
+		//if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - lastRun) < 15*60*1000) {
 				return 'This command may only be run once every 15 minutes by normal users';
 			} else {
 				lastRun = currentRun;
 			}
-		}
+		//}
 
 	IO.jsonp({
 		url : cats,
@@ -1550,13 +1550,19 @@ var commands = {
 		var lastRun;
 		var currentRun = new Date().getTime();
 
-		if(!bot.isOwner(args.get('user_id'))) {
+		console.log(lastRun);
+		console.log(currentRun);
+
+		//if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - lastRun) < 15*60*1000) {
+				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
+
 			} else {
+				console.log('in else');
 				lastRun = currentRun;
 			}
-		}
+		//}
 
 		var cats = "http://raghavsood.com/cat.php";
 
