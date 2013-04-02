@@ -1511,7 +1511,7 @@ var commands = {
 		function mdCall ( resp ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
-			args.send(msg);
+			args.directreply(msg);
 
 		}
 	},
