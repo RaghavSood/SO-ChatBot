@@ -2295,7 +2295,8 @@ var descriptions = {
 	user : 'Fetches user-link for specified user. `/user usr_id|usr_name`',
 	cat : 'Returns a static, normal cat picture',
 	catgif : 'Returns an animated cat picture',
-	whoami : 'Details about the Bot'
+	whoami : 'Details about the Bot',
+	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`'
 };
 
 //only allow owners to use certain commands
