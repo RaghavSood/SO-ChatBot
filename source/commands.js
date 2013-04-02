@@ -31,7 +31,7 @@ var commands = {
 		console.log(catGifLastRun);
 		console.log(currentRun);
 
-		//if(!bot.isOwner(args.get('user_id'))) {
+		if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - catGifLastRun) < 15*60*1000) {
 				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
@@ -40,7 +40,7 @@ var commands = {
 				console.log('in else');
 				catGifLastRun = currentRun;
 			}
-		//}
+		}
 
 	IO.jsonp({
 		url : cats,
@@ -64,7 +64,7 @@ var commands = {
 		console.log(catLastRun);
 		console.log(currentRun);
 
-		//if(!bot.isOwner(args.get('user_id'))) {
+		if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - catLastRun) < 15*60*1000) {
 				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
@@ -73,7 +73,7 @@ var commands = {
 				console.log('in else');
 				catLastRun = currentRun;
 			}
-		//}
+		}
 
 		var cats = "http://raghavsood.com/cat.php";
 
