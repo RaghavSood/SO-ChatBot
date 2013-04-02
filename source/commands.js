@@ -17,7 +17,7 @@ var commands = {
 		function mdCall ( resp ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
-			args.directreply(msg);
+			args.reply(msg);
 
 		}
 	},

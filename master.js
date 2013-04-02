@@ -1513,7 +1513,7 @@ var commands = {
 		function mdCall ( resp ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
-			args.directreply(msg);
+			args.reply(msg);
 
 		}
 	},
@@ -7317,7 +7317,7 @@ var message = "Welcome to the Android chatroom! Please review the " +
 	"People who had default usernames, or use Chat or Stack " + 
 	"Overflow solely for tech support will not be admitted.";
 
-IO.register( 'userregister', function ( user, room ) {
+IO.register( 'userjoin', function ( user, room ) {
 	console.log('in welcome');
 	//return;
 	if ( Number(room) !== 15) { /* || seen[user.id] || bot.isOwner(user.id) ) {*/
