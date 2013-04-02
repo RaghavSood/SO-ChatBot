@@ -1500,18 +1500,6 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 var commands = {
 
 	docs : function( args ) {
-
-		var lastRun;
-		var currentRun = new Date().getTime();
-
-		if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - lastRun) > 15*60*1000) {
-				return 'This command may only be run once every 15 minutes by normal users';
-			} else {
-				lastRun = currentRun;
-			}
-		}
-
 		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
 
 		IO.jsonp({
@@ -1558,6 +1546,18 @@ var commands = {
 	},
 
 	cat : function( args ) {
+
+		var lastRun;
+		var currentRun = new Date().getTime();
+
+		if(!bot.isOwner(args.get('user_id'))) {
+			if((currentRun - lastRun) > 15*60*1000) {
+				return 'This command may only be run once every 15 minutes by normal users';
+			} else {
+				lastRun = currentRun;
+			}
+		}
+
 		var cats = "http://raghavsood.com/cat.php";
 
 	IO.jsonp({
