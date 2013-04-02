@@ -326,7 +326,7 @@ IO.jsonp.google = function ( query, cb ) {
 "use strict";
 
 var bot = window.bot = {
-	invocationPattern : '@AndroidBot ',
+	invocationPattern : '!!',
 
 	commandRegex : /^\/\s*([\w\-]+)(?:\s(.+))?$/,
 	commands : {}, //will be filled as needed
@@ -2724,7 +2724,7 @@ var output = bot.adapter.out = {
 				console.error( xhr );
 				output.add(
 					'Error ' + xhr.status + ' occured, I will call the maid ' +
-					' (@Zirak)' );
+					' (@RaghavSood)' );
 			}
 			else {
 				IO.fire( 'sendoutput', xhr, text, roomid );

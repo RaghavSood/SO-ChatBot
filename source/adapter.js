@@ -321,7 +321,7 @@ var output = bot.adapter.out = {
 				console.error( xhr );
 				output.add(
 					'Error ' + xhr.status + ' occured, I will call the maid ' +
-					' (@Zirak)' );
+					' (@RaghavSood)' );
 			}
 			else {
 				IO.fire( 'sendoutput', xhr, text, roomid );
