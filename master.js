@@ -1504,8 +1504,8 @@ var commands = {
 
 		IO.jsonp({
 			url : docparserURL,
-			fun : gotMd,
-			jsonpName : 'mdCall'
+			fun : mdCall,
+			jsonpName : 'callback'
 		});
 
 		function mdCall ( resp ) {
