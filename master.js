@@ -1501,10 +1501,6 @@ var catGifLastRun;
 
 var commands = {
 
-	recho : function (args) {
-		args.reply(args.content);
-	},
-
 	docs : function( args ) {
 		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
 
@@ -2336,8 +2332,7 @@ var descriptions = {
 	cat : 'Returns a static, normal cat picture',
 	catgif : 'Returns an animated cat picture',
 	whoami : 'Details about the Bot',
-	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`',
-	recho : 'Does a raw echo. Useful when used with `tell`.'
+	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`'
 };
 
 //only allow owners to use certain commands
