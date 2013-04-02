@@ -1499,6 +1499,23 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 
 var commands = {
 
+	docs : function( args ) {
+		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
+
+		IO.jsonp({
+			url : docparserURL,
+			fun : gotMd,
+			jsonpName : 'mdCall'
+		});
+
+		function mdCall ( resp ) {
+			console.log(resp);
+			var msg = IO.decodehtmlEntities( resp.src );
+			args.send(msg);
+
+		}
+	},
+
 	catgif : function( args ) {
 		var cats = "http://raghavsood.com/catgif.php";
 
@@ -1507,6 +1524,8 @@ var commands = {
 		fun : gotURL,
 		jsonpName : 'callback'
 	});
+
+
 
 	function gotURL ( resp ) {
 		console.log(resp);
@@ -1532,10 +1551,11 @@ var commands = {
 	},
 
 	whoami : function(args) {
-		return 'I\'m a semi sentient being maintained by RaghavSood. Useful for patrolling the room, getting instant informatoin and serving up cats.' 
+		return 'I\'m a semi sentient being maintained by RaghavSood. Useful for patrolling the room, getting instant information and serving up cats.' 
 	},
 
 	//MY COMMANDS END HERE
+
 	help : function ( args ) {
 		if ( args && args.length ) {
 
@@ -2286,7 +2306,7 @@ var privilegedCommands = {
 };
 //voting-based commands for unpriviledged users
 var communal = {
-	die : true
+	die : false
 };
 
 Object.iterate( commands, function ( cmdName, fun ) {
