@@ -6606,7 +6606,7 @@ bot.addCommand({
 		del : 'NONE',
 		use : ['1069068']
 	},
-	description : 'Rejects a user\'s write request. DOES NOT WORK AT THE MOMENT';
+	description : 'Rejects a user\'s write request. DOES NOT WORK AT THE MOMENT'
 });
 }());
 ;
