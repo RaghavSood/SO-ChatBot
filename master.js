@@ -1519,13 +1519,21 @@ var commands = {
 	catgif : function( args ) {
 		var cats = "http://raghavsood.com/catgif.php";
 
-		var lastRun;
+		if(typeof lastRun === 'undefined'){
+			var lastRun;
+		}
 		var currentRun = new Date().getTime();
+
+		console.log(lastRun);
+		console.log(currentRun);
 
 		//if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - lastRun) < 15*60*1000) {
+				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
+
 			} else {
+				console.log('in else');
 				lastRun = currentRun;
 			}
 		//}
@@ -1547,7 +1555,9 @@ var commands = {
 
 	cat : function( args ) {
 
-		var lastRun;
+		if(typeof lastRun === 'undefined'){
+			var lastRun;
+		}		
 		var currentRun = new Date().getTime();
 
 		console.log(lastRun);
