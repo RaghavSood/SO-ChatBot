@@ -4,16 +4,17 @@
 
 var seen = JSON.parse( localStorage.bot_users || '{}' );
 
-var message = "Welcome to the JavaScript chat! Please review the " +
+var message = "Welcome to the Android chatroom! Please review the " +
 		bot.adapter.link(
-			"room pseudo-rules",
-			"http://rlemon.github.com/so-chat-javascript-rules/" ) + ". " +
-	"Please don't ask if you can ask or if anyone's around; just ask " +
-	"your question, and if anyone's free and interested they'll help.";
+			"room rules",
+			"http://mainerror.github.com/android-room-rules/" ) + ". " +
+	"Please don't treat the room as tech support. " +
+	"People who had default usernames, or use Chat or Stack " + 
+	"Overflow solely for tech support will not be admitted.";
 
 IO.register( 'userregister', function ( user, room ) {
-	return;
-	if ( Number(room) !== 17 || seen[user.id] || bot.isOwner(user.id) ) {
+	//return;
+	if ( Number(room) !== 15 || seen[user.id] || bot.isOwner(user.id) ) {
 		return;
 	}
 
