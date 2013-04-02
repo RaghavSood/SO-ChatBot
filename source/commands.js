@@ -17,6 +17,7 @@ var commands = {
 		function mdCall ( resp ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
+			console.log(msg);
 			if(msg === '-1') {
 				args.reply('Class not found');
 			} else {
