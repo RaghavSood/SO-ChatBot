@@ -2,7 +2,7 @@
 "use strict";
 
 var bot = window.bot = {
-	invocationPattern : '!!',
+	invocationPattern : '!',
 
 	commandRegex : /^\/\s*([\w\-]+)(?:\s(.+))?$/,
 	commands : {}, //will be filled as needed

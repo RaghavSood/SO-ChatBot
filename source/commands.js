@@ -17,8 +17,11 @@ var commands = {
 		function mdCall ( resp ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
-			args.reply(msg);
-
+			if(msg === '-1') {
+				args.reply('Class not found');
+			} else {
+				args.reply(msg);
+			}
 		}
 	},
 

@@ -8,6 +8,6 @@ IO.register( 'input', function ( msgObj ) {
 		bot.adapter.out.add( 'HAMMERTIME!', msgObj.room_id );
 	}
 	else if ( /(^)?HALT[\.!\?]?$/.test(sentence) ) {
-		bot.adapter.out.add( 'HAMMERZEIT!', msgObj.room_id );
+		bot.adapter.out.add( 'http://i.qkme.me/3tnhjd.jpg', msgObj.room_id );
 	}
 });
