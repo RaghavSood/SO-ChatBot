@@ -1523,7 +1523,7 @@ var commands = {
 		var currentRun = new Date().getTime();
 
 		if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - lastRun) > 15*60*1000) {
+			if((currentRun - lastRun) < 15*60*1000) {
 				return 'This command may only be run once every 15 minutes by normal users';
 			} else {
 				lastRun = currentRun;
@@ -1551,7 +1551,7 @@ var commands = {
 		var currentRun = new Date().getTime();
 
 		if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - lastRun) > 15*60*1000) {
+			if((currentRun - lastRun) < 15*60*1000) {
 				return 'This command may only be run once every 15 minutes by normal users';
 			} else {
 				lastRun = currentRun;
