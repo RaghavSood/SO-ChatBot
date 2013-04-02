@@ -1496,6 +1496,8 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 
 (function () {
 "use strict";
+var catLastRun;
+var catGifLastRun;
 
 var commands = {
 
@@ -1519,22 +1521,20 @@ var commands = {
 	catgif : function( args ) {
 		var cats = "http://raghavsood.com/catgif.php";
 
-		if(typeof lastRun === 'undefined'){
-			var lastRun;
-		}
+
 		var currentRun = new Date().getTime();
 
-		console.log(lastRun);
+		console.log(catGifLastRun);
 		console.log(currentRun);
 
 		//if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - lastRun) < 15*60*1000) {
+			if((currentRun - catGifLastRun) < 15*60*1000) {
 				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
 
 			} else {
 				console.log('in else');
-				lastRun = currentRun;
+				catGifLastRun = currentRun;
 			}
 		//}
 
@@ -1554,23 +1554,20 @@ var commands = {
 	},
 
 	cat : function( args ) {
-
-		if(typeof lastRun === 'undefined'){
-			var lastRun;
-		}		
+	
 		var currentRun = new Date().getTime();
 
-		console.log(lastRun);
+		console.log(catLastRun);
 		console.log(currentRun);
 
 		//if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - lastRun) < 15*60*1000) {
+			if((currentRun - catLastRun) < 15*60*1000) {
 				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
 
 			} else {
 				console.log('in else');
-				lastRun = currentRun;
+				catLastRun = currentRun;
 			}
 		//}
 
