@@ -1,6 +1,6 @@
 ( function() {
 	var userquality = {
-		command : function ( args, cb ) {
+		command : function ( msg, cb ) {
 
 			var args = msg.parse(),
 			id = args[ 0 ];
