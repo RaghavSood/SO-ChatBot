@@ -6699,6 +6699,11 @@ function nudgeListener ( args ) {
 ( function() {
 	var reject = {
 		command : function ( args, cb ) {
+
+			function trim1 (str) {
+   				return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+			}
+
 			var customMessage = ' ';
 
 			if(args.content.indexOf('-m') !== -1) {
@@ -6708,9 +6713,9 @@ function nudgeListener ( args ) {
 
 				var myarr = message.split("-m");
 
-				var usrid = myarr[0];
+				var usrid = trim1(myarr[0]);
 
-				customMessage = myarr[1];
+				customMessage = trim1(myarr[1]);
 
 				console.log('If Contents: ' + message + ' usrid: ' + usrid + ' customMessage: ' + customMessage);
 
