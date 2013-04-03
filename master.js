@@ -2994,6 +2994,56 @@ IO.register( 'input', function ( msgObj ) {
 });
 
 ;
+( function() {
+	var accept = {
+		command : function ( args, cb ) {
+			var usrid = args.content;
+
+			var idURL = 'http://raghavsood.com/dupe.php?user=' + usrid + '&';
+
+
+			IO.jsonp({
+				url : idURL,
+				fun : backCall,
+				jsonpName : 'callback'
+			});
+
+			function backCall ( resp ) {
+
+			console.log(resp);
+			var msg = IO.decodehtmlEntities( resp.src );
+			console.log(msg);
+
+				IO.xhr({
+					url   : '/rooms/setuseraccess/15',
+					data   : {
+						userAccess : 'read-write',
+						aclUserId : msg,
+						fkey : fkey().fkey
+					},
+					method  : 'POST',
+					complete : finish
+				});
+			}
+
+			function finish ( resp, xhr ) {
+				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read the [room rules](http://mainerror.github.com/android-room-rules/)');
+			}
+		}
+	};
+
+	bot.addCommand({
+		name : 'accept',
+		fun  : accept.command,
+		thisArg : accept,
+		permissions : {
+			del : 'NONE',
+			use : 'OWNER'
+		},
+		description : 'Accepts a user\'s write request. Room Owners only.'
+	});
+}());
+;
 (function () {
 "use strict";
 
@@ -6679,7 +6729,7 @@ function nudgeListener ( args ) {
 			}
 
 			function finish ( resp, xhr ) {
-				args.send('@' + args.parse()[0] + ' Rejected');
+				args.send('@' + usrid.replace(/\s/g,'') + ' Rejected');
 			}
 		}
 	};
@@ -6692,7 +6742,7 @@ function nudgeListener ( args ) {
 			del : 'NONE',
 			use : 'OWNER'
 		},
-		description : 'Rejects a user\'s write request. PROBABLY DOES NOT WORK AT THE MOMENT'
+		description : 'Rejects a user\'s write request. Room Owners only.'
 	});
 }());
 ;

@@ -1,5 +1,5 @@
 ( function() {
-	var reject = {
+	var accept = {
 		command : function ( args, cb ) {
 			var usrid = args.content;
 
@@ -21,7 +21,7 @@
 				IO.xhr({
 					url   : '/rooms/setuseraccess/15',
 					data   : {
-						userAccess : 'remove',
+						userAccess : 'read-write',
 						aclUserId : msg,
 						fkey : fkey().fkey
 					},
@@ -31,19 +31,19 @@
 			}
 
 			function finish ( resp, xhr ) {
-				args.send('@' + usrid.replace(/\s/g,'') + ' Rejected');
+				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read the [room rules](http://mainerror.github.com/android-room-rules/)');
 			}
 		}
 	};
 
 	bot.addCommand({
-		name : 'reject',
-		fun  : reject.command,
-		thisArg : reject,
+		name : 'accept',
+		fun  : accept.command,
+		thisArg : accept,
 		permissions : {
 			del : 'NONE',
 			use : 'OWNER'
 		},
-		description : 'Rejects a user\'s write request. Room Owners only.'
+		description : 'Accepts a user\'s write request. Room Owners only.'
 	});
 }());
