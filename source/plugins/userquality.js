@@ -16,7 +16,7 @@
 				return 'User Elusio proved elusive.';
 			}
 
-			args.send('Placeholder for now' + id);
+			msg.send('Placeholder for now' + id);
 		}
 	};
 
