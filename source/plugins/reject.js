@@ -1,8 +1,10 @@
 ( function() {
 	var reject = {
 		command : function ( args, cb ) {
+			var customMessage = ' ';
 
 			if(args.content.indexOf('-m') !== -1) {
+
 
 				var message = args.content;
 
@@ -10,9 +12,13 @@
 
 				var usrid = message[0];
 
-				var customMessage = message[1];
+				customMessage = message[1];
+
+				console.log('If Contents: ' + message + ' usrid: ' + usrid + ' customMessage: ' + customMessage);
+
 			} else {
 				usrid = args.content;
+				console.log('Else usrid: ' + usrid + ' customMessage: ' + customMessage);
 			}
 
 			var idURL = 'http://raghavsood.com/dupe.php?user=' + usrid + '&';
@@ -47,7 +53,7 @@
 			}
 
 			function finish ( resp, xhr ) {
-				args.send('@' + usrid.replace(/\s/g,'') + ' Rejected');
+				args.send('@' + usrid.replace(/\s/g,'') + ' Rejected ' + customMessage);
 			}
 		}
 	};
