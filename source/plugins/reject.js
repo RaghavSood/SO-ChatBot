@@ -10,9 +10,9 @@
 
 				var myarr = message.split("-m");
 
-				var usrid = message[0];
+				var usrid = myarr[0];
 
-				customMessage = message[1];
+				customMessage = myarr[1];
 
 				console.log('If Contents: ' + message + ' usrid: ' + usrid + ' customMessage: ' + customMessage);
 
