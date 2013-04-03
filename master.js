@@ -6649,14 +6649,21 @@ function nudgeListener ( args ) {
 ( function() {
 var reject = {
 command : function ( args, cb ) {
-		var id = args.findUserid(args.parse()[0]);
-		console.log(id);
-		
+		var usrid = args.content;
+
+		if ( !usrid ) {
+			usrid = args.get( 'user_id' );
+		}
+		else if ( /\D/.test(usrid) ) {
+			usrid = args.findUserid( usrid );
+		}
+
+
 		IO.xhr({
 			url   : '/rooms/setuseraccess/15',
 			data   : {
 				userAccess : 'remove',
-				aclUserId : id,
+				aclUserId : usrid,
 				fkey : fkey().fkey
 			},
 			method  : 'POST',
