@@ -1,7 +1,7 @@
 ( function() {
 var reject = {
 command : function ( args, cb ) {
-		var id = args.findUserId(args.parse()[0]));
+		var id = args.findUserId(args.parse()[0]);
 		
 		IO.xhr({
 			url   : '/rooms/setuseraccess/15',
@@ -15,7 +15,7 @@ command : function ( args, cb ) {
 		});
 
 		function finish ( resp, xhr ) {
-			args.send('@' + args.parse()[0]) + ' Rejected');
+			args.send('@' + args.parse()[0])` + ' Rejected');
 		}
 	}
 };
