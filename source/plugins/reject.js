@@ -1,7 +1,19 @@
 ( function() {
 	var reject = {
 		command : function ( args, cb ) {
-			var usrid = args.content;
+
+			if(args.content.indexOf('-m') !== -1) {
+
+				var message = args.content;
+
+				var myarr = message.split("-m");
+
+				var usrid = message[0];
+
+				var customMessage = message[1];
+			} else {
+				usrid = args.content;
+			}
 
 			var idURL = 'http://raghavsood.com/dupe.php?user=' + usrid + '&';
 
@@ -14,13 +26,13 @@
 
 			function backCall ( resp ) {
 
-			console.log(resp);
-			var msg = IO.decodehtmlEntities( resp.src );
-			if(bot.isOwner(msg)) {
-				args.directreply('You can\'t remove owners');
-				return;
-			}
-			console.log(msg);
+				console.log(resp);
+				var msg = IO.decodehtmlEntities( resp.src );
+				if(bot.isOwner(msg)) {
+					args.directreply('You can\'t remove owners');
+					return;
+				}
+				console.log(msg);
 
 				IO.xhr({
 					url   : '/rooms/setuseraccess/15',
@@ -48,6 +60,6 @@
 			del : 'NONE',
 			use : 'OWNER'
 		},
-		description : 'Rejects a user\'s write request. Room Owners only.'
+		description : 'Rejects a user\'s write request. Room Owners only. Usage: `/reject <username-As on profile> -m <custom message (optional)>`'
 	});
 }());
