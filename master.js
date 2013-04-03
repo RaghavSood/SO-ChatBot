@@ -7344,7 +7344,7 @@ bot.addCommand({
 				id = msg.get( 'user_id' );
 			}
 			else if ( !/^\d+$/.test(id) ) {
-				id = msg.findUserid( extended ? id : args.slice().join(' ') );
+				id = msg.findUserid(id);
 			}
 
 			if ( id < 0 ) {
