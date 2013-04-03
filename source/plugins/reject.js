@@ -16,6 +16,10 @@
 
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
+			if(bot.isOwner(msg)) {
+				args.directReply('You can\'t remove owners');
+				return;
+			}
 			console.log(msg);
 
 				IO.xhr({
