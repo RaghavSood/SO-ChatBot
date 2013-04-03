@@ -2,6 +2,7 @@
 var reject = {
 command : function ( args, cb ) {
 		var id = args.findUserid(args.parse()[0]);
+		console.log(id);
 		
 		IO.xhr({
 			url   : '/rooms/setuseraccess/15',
