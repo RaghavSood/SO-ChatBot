@@ -6715,7 +6715,7 @@ function nudgeListener ( args ) {
 			console.log(resp);
 			var msg = IO.decodehtmlEntities( resp.src );
 			if(bot.isOwner(msg)) {
-				args.directReply('You can\'t remove owners');
+				args.directreply('You can\'t remove owners');
 				return;
 			}
 			console.log(msg);
