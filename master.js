@@ -6663,14 +6663,7 @@ command : function ( args, cb ) {
 		});
 
 		function finish ( resp, xhr ) {
-			var msg = 'error';
-
-			if ( resp === '"ok"' ) {
-				//nothing to see here
-				return;
-			}
- 
-			args.reply( resp );
+			args.send(':' + id + ' Rejected');
 		}
 	}
 };
