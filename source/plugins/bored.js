@@ -36,7 +36,7 @@ function zzz () {
 		} while ( memory.contains(resp) );
 
 		memory.add( resp );
-		bot.adapter.out.add( resp, roomid );
+		//bot.adapter.out.add( resp, roomid );
 	}
 
 	//checks, for a specific room, whether enough time has passed since someone
