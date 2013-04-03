@@ -6670,7 +6670,7 @@ command : function ( args, cb ) {
 				return;
 			}
 
-			cb( msg );
+			args.reply( msg );
 		}
 	}
 };
