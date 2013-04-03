@@ -21,8 +21,8 @@ command : function ( args, cb ) {
 				//nothing to see here
 				return;
 			}
-
-			args.reply( msg );
+ 
+			args.reply( resp );
 		}
 	}
 };
