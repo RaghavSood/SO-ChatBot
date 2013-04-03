@@ -847,7 +847,8 @@ var descriptions = {
 var privilegedCommands = {
 	die : true, live  : true,
 	ban : true, unban : true,
-	refresh : true, purgecommands : true
+	refresh : true, purgecommands : true,
+	reject : true
 };
 //voting-based commands for unpriviledged users
 var communal = {
