@@ -5,6 +5,10 @@ var catGifLastRun;
 
 var commands = {
 
+	userquality : function (args){
+
+	},
+
 	docs : function( args ) {
 		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
 

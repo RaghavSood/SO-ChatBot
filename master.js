@@ -1501,6 +1501,10 @@ var catGifLastRun;
 
 var commands = {
 
+	userquality : function (args){
+
+	},
+
 	docs : function( args ) {
 		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
 
@@ -7328,6 +7332,25 @@ bot.addCommand({
 
 }());
 
+;
+( function() {
+	var userquality = {
+		command : function ( args, cb ) {
+			args.send('Placeholder for now');
+		}
+	};
+
+	bot.addCommand({
+		name : 'userquality',
+		fun  : userquality.command,
+		thisArg : userquality,
+		permissions : {
+			del : 'NONE',
+			use : 'ALL'
+		},
+		description : 'Reports userquality'
+	});
+}());
 ;
 IO.register( 'input', function ( msgObj ) {
 	if ( msgObj.user_id === 1386886 && Math.random() < 0.005 ) {
