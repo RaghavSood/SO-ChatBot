@@ -2590,6 +2590,7 @@ var polling = bot.adapter.in = {
 		// number do? (spoiler: it "works")
 		var socket = this.socket = new WebSocket( url + '?l=99999999999' );
 		socket.onmessage = this.ondata.bind( this );
+		announce();
 	},
 
 	ondata : function ( messageEvent ) {
@@ -2995,6 +2996,9 @@ IO.register( 'input', function ( msgObj ) {
 	}
 	else if ( /(^)?HALT[\.!\?]?$/.test(sentence) ) {
 		bot.adapter.out.add( 'http://i.qkme.me/3tnhjd.jpg', msgObj.room_id );
+	}
+	else if ( /(^)?@AndroidBot[\.!\?]?$/.test(sentence) ) {
+		bot.adapter.out.add( 'Stop Pinging Me. I\'m a Bot for, Asimov\'s sake', msgObj.room_id );
 	}
 });
 

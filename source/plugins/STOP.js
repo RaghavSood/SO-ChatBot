@@ -10,4 +10,7 @@ IO.register( 'input', function ( msgObj ) {
 	else if ( /(^)?HALT[\.!\?]?$/.test(sentence) ) {
 		bot.adapter.out.add( 'http://i.qkme.me/3tnhjd.jpg', msgObj.room_id );
 	}
+	else if ( /(^)?@AndroidBot[\.!\?]?$/.test(sentence) ) {
+		bot.adapter.out.add( 'Stop Pinging Me. I\'m a Bot for, Asimov\'s sake', msgObj.room_id );
+	}
 });
