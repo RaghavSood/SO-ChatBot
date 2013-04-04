@@ -1501,8 +1501,8 @@ var catGifLastRun;
 
 var commands = {
 
-	userquality : function (args){
-
+	flip : function( args ) {
+		return '(╯°□°）╯︵ ┻━┻';
 	},
 
 	docs : function( args ) {
@@ -2340,7 +2340,8 @@ var descriptions = {
 	cat : 'Returns a static, normal cat picture',
 	catgif : 'Returns an animated cat picture',
 	whoami : 'Details about the Bot',
-	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`'
+	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`',
+	flip : 'Flip a table'
 };
 
 //only allow owners to use certain commands
@@ -3080,6 +3081,13 @@ IO.register( 'input', function ( msgObj ) {
 		},
 		description : 'Adds a user to the write list by ID. Room Owners only. Usage: `/addid userID`'
 	});
+}());
+;
+(function() {
+	function announce() {
+		bot.adapter.out.add('**Bot Activated**', msgObj.room_id);
+	}
+	announce();
 }());
 ;
 (function () {
@@ -7351,7 +7359,7 @@ bot.addCommand({
 				return 'User Elusio proved elusive.';
 			}
 
-			msg.send('Placeholder for now' + id);
+			msg.send('Placeholder for now ' + id);
 		}
 	};
 
