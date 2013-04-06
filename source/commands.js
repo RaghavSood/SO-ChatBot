@@ -2,15 +2,33 @@
 "use strict";
 var catLastRun;
 var catGifLastRun;
+var unicornLastRun;
 
 var commands = {
 
 	unicorn : function( args ) {
+
+		var currentRun = new Date().getTime();
+
+		console.log(unicornLastRun);
+		console.log(currentRun);
+
+		if(!bot.isOwner(args.get('user_id'))) {
+			if((currentRun - unicornLastRun) < 15*60*1000) {
+				console.log('in if');
+				return 'This command may only be run once every 15 minutes by normal users';
+
+			} else {
+				console.log('in else');
+				unicornLastRun = currentRun;
+			}
+		}
+
 		var picArray = ['http://images4.fanpop.com/image/photos/24100000/Robot-Unicorn-Wallpaper-unicorns-24171150-1920-1080.jpg', 'http://socialwell.org/wp-content/uploads/2013/01/Follow-Your-Dreams-unicorns.jpg', 'http://amyfsheridan.files.wordpress.com/2009/08/unicorn_hi-res.jpg', 'http://wallpoper.com/images/00/38/85/88/unicorn_00388588.png', 'http://i1.squidoocdn.com/resize/squidoo_images/590/draft_lens14867451module129742301photo_1288371777Robot_Unicorn_Attack_by_z'];
 
 		var rand = picArray[Math.floor(Math.random() * picArray.length)];
 
-		return rand;
+		args.send(rand);
 	},
 
 	flip : function( args ) {
