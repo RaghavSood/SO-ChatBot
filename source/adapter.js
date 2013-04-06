@@ -120,7 +120,6 @@ var polling = bot.adapter.in = {
 		// number do? (spoiler: it "works")
 		var socket = this.socket = new WebSocket( url + '?l=99999999999' );
 		socket.onmessage = this.ondata.bind( this );
-		announce();
 	},
 
 	ondata : function ( messageEvent ) {

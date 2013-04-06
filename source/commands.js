@@ -5,6 +5,14 @@ var catGifLastRun;
 
 var commands = {
 
+	unicorn : function( args ) {
+		var picArray = ['http://images4.fanpop.com/image/photos/24100000/Robot-Unicorn-Wallpaper-unicorns-24171150-1920-1080.jpg', 'http://socialwell.org/wp-content/uploads/2013/01/Follow-Your-Dreams-unicorns.jpg', 'http://amyfsheridan.files.wordpress.com/2009/08/unicorn_hi-res.jpg', 'http://wallpoper.com/images/00/38/85/88/unicorn_00388588.png', 'http://i1.squidoocdn.com/resize/squidoo_images/590/draft_lens14867451module129742301photo_1288371777Robot_Unicorn_Attack_by_z'];
+
+		var rand = picArray[Math.floor(Math.random() * picArray.length)];
+
+		return rand;
+	},
+
 	flip : function( args ) {
 		return '(╯°□°）╯︵ ┻━┻';
 	},
@@ -845,7 +853,8 @@ var descriptions = {
 	catgif : 'Returns an animated cat picture',
 	whoami : 'Details about the Bot',
 	docs : 'Retrieves the link to the page for the given class in the documentation. `/docs <classNameProperlyCased>`',
-	flip : 'Flip a table'
+	flip : 'Flip a table',
+	unicorn : 'Shows a unicorn image'
 };
 
 //only allow owners to use certain commands
