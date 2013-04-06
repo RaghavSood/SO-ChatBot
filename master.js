@@ -3099,7 +3099,7 @@ IO.register( 'input', function ( msgObj ) {
 	function announce() {
 		bot.adapter.out.add('**Bot Activated**', msgObj.room_id);
 	}
-	announce();
+	//announce();
 }());
 ;
 (function () {
