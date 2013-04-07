@@ -36,7 +36,7 @@ var commands = {
 	},
 
 	docs : function( args ) {
-		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
+		var docparserURL = 'http://android-manual.herokuapp.com/' + args.content + '&';
 
 		IO.jsonp({
 			url : docparserURL,
