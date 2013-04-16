@@ -6,9 +6,9 @@ var unicornLastRun;
 
 var commands = {
 
-	birthday : function (args) {}
-		return '[Happy Birthday!](https://www.youtube.com/watch?v=ey22gpY7KUE)'
-	,
+	birthday : function (args) {
+		return '[Happy Birthday!](https://www.youtube.com/watch?v=ey22gpY7KUE)';
+	},
 
 	unicorn : function( args ) {
 
