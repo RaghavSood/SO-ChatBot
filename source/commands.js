@@ -327,6 +327,10 @@ var commands = {
 			if ( Math.random() < 0.15 ) {
 				ret.push( 'teleported ' + Math.rand(100) + ' goats' );
 			}
+
+			if(catCount) {
+				ret.push( 'displayed ' + catCount + ' cats' );
+			}
 			//Cat Count
 			if(catCount===0) {
 				ret.push('displayed ' + catCount + ' cats');
