@@ -1787,6 +1787,10 @@ var commands = {
 				ret += ' on ' + cmd.date.toUTCString();
 			}
 
+			if(catCount) {
+				ret += 'displayed ' + catCount + ' cats';
+			}
+
 			if ( cmd.invoked ) {
 				ret += ', invoked ' + cmd.invoked + ' times';
 			}
@@ -1823,21 +1827,11 @@ var commands = {
 			if ( Math.random() < 0.15 ) {
 				ret.push( 'teleported ' + Math.rand(100) + ' goats' );
 			}
-
+			console.log('catCount ' + catCount);
 			if(catCount) {
 				ret.push( 'displayed ' + catCount + ' cats' );
 			}
-			//Cat Count
-			if(catCount===0) {
-				ret.push('displayed ' + catCount + ' cats');
-			}
-			else if(catCount===1) {
-				ret.push('displayed ' + catCount + ' cat');
-			} 
-			else if(catCount>1) {
-				ret.push('displayed ' + catCount + ' cats');
-			}
-			//Cat Count
+
 
 			return ret.join( ', ' ) || 'haven\'t done anything yet!';
 		}
