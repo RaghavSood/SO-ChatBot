@@ -1498,6 +1498,7 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 "use strict";
 var catLastRun;
 var catGifLastRun;
+var catCount;
 var unicornLastRun;
 
 var commands = {
@@ -1566,9 +1567,9 @@ var commands = {
 		console.log(currentRun);
 
 		if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - catGifLastRun) < 15*60*1000) {
+			if((currentRun - catGifLastRun) < 20*60*1000) {
 				console.log('in if');
-				return 'This command may only be run once every 15 minutes by normal users';
+				return 'This command may only be run once every 20 minutes by normal users';
 
 			} else {
 				console.log('in else');
@@ -1586,6 +1587,7 @@ var commands = {
 
 	function gotURL ( resp ) {
 		console.log(resp);
+		catCount = catCount + 1;
 		var msg = IO.decodehtmlEntities( resp.src );
 		args.send(msg);
 	}
@@ -1599,7 +1601,7 @@ var commands = {
 		console.log(currentRun);
 
 		if(!bot.isOwner(args.get('user_id'))) {
-			if((currentRun - catLastRun) < 15*60*1000) {
+			if((currentRun - catLastRun) < 20*60*1000) {
 				console.log('in if');
 				return 'This command may only be run once every 15 minutes by normal users';
 
@@ -1619,6 +1621,7 @@ var commands = {
 
 	function gotURL ( resp ) {
 		console.log(resp);
+		catCount = catCount + 1;
 		var msg = IO.decodehtmlEntities( resp.src );
 		args.send(msg);
 	}
@@ -1820,6 +1823,17 @@ var commands = {
 			if ( Math.random() < 0.15 ) {
 				ret.push( 'teleported ' + Math.rand(100) + ' goats' );
 			}
+			//Cat Count
+			if(catCount===0) {
+				ert.push('displayed ' + catCount + ' cats');
+			}
+			else if(catCount===1) {
+				ert.push('displayed ' + catCount + ' cat');
+			} 
+			else if(catCount>1) {
+				ert.push('displayed ' + catCount + ' cats');
+			}
+			//Cat Count
 
 			return ret.join( ', ' ) || 'haven\'t done anything yet!';
 		}
