@@ -1498,7 +1498,7 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 "use strict";
 var catLastRun;
 var catGifLastRun;
-var catCount;
+var catCount = 0;
 var unicornLastRun;
 
 var commands = {
