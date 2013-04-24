@@ -329,13 +329,13 @@ var commands = {
 			}
 			//Cat Count
 			if(catCount===0) {
-				ert.push('displayed ' + catCount + ' cats');
+				ret.push('displayed ' + catCount + ' cats');
 			}
 			else if(catCount===1) {
-				ert.push('displayed ' + catCount + ' cat');
+				ret.push('displayed ' + catCount + ' cat');
 			} 
 			else if(catCount>1) {
-				ert.push('displayed ' + catCount + ' cats');
+				ret.push('displayed ' + catCount + ' cats');
 			}
 			//Cat Count
 
