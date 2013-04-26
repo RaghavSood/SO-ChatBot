@@ -21,7 +21,7 @@ var commands = {
 		if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - unicornLastRun) < 15*60*1000) {
 				console.log('in if');
-				return 'This command may only be run once every 15 minutes by normal users';
+				return 'This command may only be run once every 15 minutes by peasants';
 
 			} else {
 				console.log('in else');
@@ -73,7 +73,7 @@ var commands = {
 		if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - catGifLastRun) < 20*60*1000) {
 				console.log('in if');
-				return 'This command may only be run once every 20 minutes by normal users';
+				return 'This command may only be run once every 20 minutes by peasants';
 
 			} else {
 				console.log('in else');
@@ -97,6 +97,40 @@ var commands = {
 	}
 	},
 
+	meow : function( args ) {
+	
+		var currentRun = new Date().getTime();
+
+		console.log(catLastRun);
+		console.log(currentRun);
+
+		if(!bot.isOwner(args.get('user_id'))) {
+			if((currentRun - catLastRun) < 20*60*1000) {
+				console.log('in if');
+				return 'This command may only be run once every 15 minutes by peasants';
+
+			} else {
+				console.log('in else');
+				catLastRun = currentRun;
+			}
+		}
+
+		var cats = "http://raghavsood.com/cat.php";
+
+	IO.jsonp({
+		url : cats,
+		fun : gotURL,
+		jsonpName : 'callback'
+	});
+
+	function gotURL ( resp ) {
+		console.log(resp);
+		catCount = catCount + 1;
+		var msg = IO.decodehtmlEntities( resp.src );
+		args.send(msg);
+	}
+	},
+
 	cat : function( args ) {
 	
 		var currentRun = new Date().getTime();
@@ -107,7 +141,7 @@ var commands = {
 		if(!bot.isOwner(args.get('user_id'))) {
 			if((currentRun - catLastRun) < 20*60*1000) {
 				console.log('in if');
-				return 'This command may only be run once every 15 minutes by normal users';
+				return 'This command may only be run once every 15 minutes by peasants';
 
 			} else {
 				console.log('in else');
