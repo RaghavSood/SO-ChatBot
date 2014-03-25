@@ -31,7 +31,7 @@
 			}
 
 			function finish ( resp, xhr ) {
-				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read the [room rules](http://mainerror.github.com/android-room-rules/)');
+				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read, confirm reading and follow the [room rules](http://spifftastic.net/room.15/)');
 			}
 		}
 	};
