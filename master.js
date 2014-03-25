@@ -1537,8 +1537,8 @@ var commands = {
 	},
 
 	docs : function( args ) {
-		var docparserURL = 'http://android-manual.herokuapp.com/' + args.content + '&';
-
+		//var docparserURL = 'http://android-manual.herokuapp.com/' + args.content + '&';
+		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
 		IO.jsonp({
 			url : docparserURL,
 			fun : mdCall,
@@ -3114,7 +3114,7 @@ IO.register( 'input', function ( msgObj ) {
 			}
 
 			function finish ( resp, xhr ) {
-				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read the [room rules](http://mainerror.github.com/android-room-rules/)');
+				args.send('@' + usrid.replace(/\s/g,'') + ' Welcome! Please read, confirm reading and follow the [room rules](http://spifftastic.net/room.15/)');
 			}
 		}
 	};
@@ -3130,6 +3130,7 @@ IO.register( 'input', function ( msgObj ) {
 		description : 'Accepts a user\'s write request. Room Owners only.'
 	});
 }());
+
 ;
 ( function() {
 	var addid = {
