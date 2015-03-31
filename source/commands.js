@@ -42,7 +42,7 @@ var commands = {
 
 	docs : function( args ) {
 		//var docparserURL = 'http://android-manual.herokuapp.com/' + args.content + '&';
-		var docparserURL = 'http://raghavsood.com/docsParser.php?name=' + args.content + '&';
+		var docparserURL = 'http://rsood.in/docsParser.php?name=' + args.content + '&';
 		IO.jsonp({
 			url : docparserURL,
 			fun : mdCall,
@@ -62,7 +62,7 @@ var commands = {
 	},
 
 	catgif : function( args ) {
-		var cats = "http://raghavsood.com/catgif.php";
+		var cats = "http://rsood.in/catgif.php";
 
 
 		var currentRun = new Date().getTime();
@@ -115,7 +115,7 @@ var commands = {
 			}
 		}
 
-		var cats = "http://raghavsood.com/cat.php";
+		var cats = "http://rsood.in/cat.php";
 
 	IO.jsonp({
 		url : cats,
@@ -149,7 +149,7 @@ var commands = {
 			}
 		}
 
-		var cats = "http://raghavsood.com/cat.php";
+		var cats = "http://rsood.in/cat.php";
 
 	IO.jsonp({
 		url : cats,
