@@ -36,6 +36,48 @@ var commands = {
 		args.send(rand);
 	},
 
+	skeet : function(args) {
+		var jokeArray = [
+			'Jon Skeet is immutable. If something\'s going to change, it\'s going to have to be the rest of the universe.',
+			'Anonymous methods and anonymous types are really all called Jon Skeet. They just don\'t like to boast.',
+			'Jon Skeet\'s code doesn\'t follow a coding convention. It *is* the coding convention.',
+			'Jon Skeet doesn\'t have performance bottlenecks. He just makes the universe wait its turn.',
+			'Users don\'t mark Jon Skeet\'s answers as accepted. The universe accepts them out of a sense of truth and justice.',
+			'Jon Skeet does not refer to himself in the third person. Jon skeet is always the first person, regardless of who is speaking about him.',
+			'Jon Skeet can divide by zero.',
+			'Jon Skeet coded his last project entirely in Microsoft Paint, just for the challenge.',
+			'When Jon Skeet\'s code fails to compile, the compiler apologizes.',
+			'Jon Skeet does not use revision control software. None of his code has ever needed revision.',
+			'There are two types of programmers: good programmers, and those that are not Jon Skeet.',
+			'Jon Skeet has already written a book about C# 5.0. It\'s currently sealed up. In three years, Anders Hejlsberg is going to open the book to see if the language design team got it right.',
+			'Jon Skeet can recite Pi. Backwards.',
+			'When Jon Skeet points to null, null quakes in fear.',
+			'Jon Skeet *is* the traveling salesman. Only he knows the shortest route.',
+			'Jon Skeet took the red pill and the blue pill, and can phase-shift in and out of the Matrix at will.',
+			'Jon Skeet has root access to your system.',
+			'Jon Skeet knows the air speed velocity of an unladen swallow, both African and European.',
+			'If Jon Skeet posts a duplicate question on StackOverflow, the original question will be closed as duplicate.',
+			'When Jon Skeet gives a method an argument, the method loses.',
+			'When invoking one of Jon Skeet\'s callbacks, the runtime adds \'please\'.',
+			'Jon Skeet can believe it\'s not butter.',
+			'Jon Skeet can throw an exception further than anyone else, and in less time.',
+			'Jon Skeet doesn\'t need a debugger. He stares down the bug until the code confesses.',
+			'If you have 10,000 reputation and Jon Skeet has 10,000 reputation, Jon Skeet has more reputation than you.',
+			'God said: \'Let there be light,\' only to see what Jon Skeet was up to.',
+			'Jon Skeet\'s heart rate is 5 GHz.',
+			'Jon Skeet has the key to open source, he just doesn\'t want to close it.',
+			'When Jon Skeet is programming the Garbage Collector rests. The objects know when to destroy themselves.',
+			'When Jon Skeet throws an exception, nothing can catch it.',
+			'Jon Skeet can solve the travelling salesman in O(1).',
+			'Jon Skeet can do paired programming with himself.',
+			'When Jon Skeet saves a file the file thanks him.'
+		];
+
+		var randJoke = jokeArray[Math.floor(Math.random() * jokeArray.length)];
+
+		args.send(randJoke);
+	},
+
 	flip : function( args ) {
 		return '(╯°□°）╯︵ ┻━┻';
 	},
